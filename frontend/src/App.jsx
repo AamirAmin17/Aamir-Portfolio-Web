@@ -1,14 +1,21 @@
 import { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
-import "./check.scss";
+import "./App.scss";
 
+import { About, Footer, Header, Skills, Testimonial, Work } from "./container";
+import { Navbar } from "./components/Navbar";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className='App'>
-      <h1 className='check'>Hello</h1>
+    <div className='app'>
+      <Navbar />
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Testimonial />
+      <Footer />
     </div>
   );
 }
