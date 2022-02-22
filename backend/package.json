@@ -1,31 +1,30 @@
 {
-  "name": "aamirportfolio",
+  "name": "backend",
   "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "AAMIR MUHAMMAD AMIN <aamir.37800@iqra.edu.pk>",
-  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "keywords": [
-    "sanity"
-  ],
+  "devDependencies": {},
   "dependencies": {
-    "@sanity/base": "^2.27.0",
-    "@sanity/core": "^2.27.0",
-    "@sanity/default-layout": "^2.27.0",
-    "@sanity/default-login": "^2.27.0",
-    "@sanity/desk-tool": "^2.27.0",
-    "@sanity/eslint-config-studio": "^2.0.0",
-    "@sanity/vision": "^2.27.0",
-    "eslint": "^8.6.0",
-    "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "styled-components": "^5.2.0"
+    "@strapi/strapi": "4.1.0",
+    "@strapi/plugin-users-permissions": "4.1.0",
+    "@strapi/plugin-i18n": "4.1.0",
+    "sqlite3": "5.0.2"
   },
-  "devDependencies": {}
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "a5a6b282-70ee-47cb-8e7e-a4b901fd4ef5"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
