@@ -3,7 +3,7 @@ import "./About.scss";
 import "./About-MediaQuery.scss";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import useFetchStrapi from "../../components/customHooks/useFetchStrapi";
 const About = () => {
   const { data: abouts } = useFetchStrapi(
@@ -62,4 +62,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(MotionWrap(About), "about", "app__whitebg");
