@@ -6,17 +6,19 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="app__navbar">
-      <div className="app__navbar-logo">
+    <nav className='app__navbar'>
+      <div className='app__navbar-logo'>
         <h1>
-          <span className="navbar__logo__color1">Aamir </span>
-          <span className="navbar__logo__color2">Muhammad Amin</span>
+          <a href='#home' style={{ textDecoration: "none" }}>
+            <span className='navbar__logo__color1'>Aamir </span>
+            <span className='navbar__logo__color2'>Muhammad Amin</span>
+          </a>
         </h1>
       </div>
-      <ul className="app__navbar-links">
+      <ul className='app__navbar-links'>
         {["home", "about", "work", "skills", "testimonial", "contact"].map(
           (item) => (
-            <li key={`link-${item}`} className="app__flex p-text">
+            <li key={`link-${item}`} className='app__flex p-text'>
               <div />
               <a href={`#${item}`}>{item}</a>
             </li>
@@ -24,14 +26,13 @@ const Navbar = () => {
         )}
       </ul>
 
-      <div className="app__navbar-menu">
+      <div className='app__navbar-menu'>
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
           <motion.div
             whileInView={{ x: [300, 0] }}
-            className="app__navbar-motion-div"
-            transition={{ duration: 0.85, ease: "easeOut" }}
-          >
+            className='app__navbar-motion-div'
+            transition={{ duration: 0.85, ease: "easeOut" }}>
             <HiX onClick={() => setToggle(false)} />
             <ul>
               {["home", "about", "contact", "work", "skills"].map((item) => (

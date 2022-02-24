@@ -5,13 +5,13 @@ const AppWrap = (Component, idName, className) =>
     return (
       <div id={idName} className={`app__container ${className}`}>
         <SocialMedia />
-        <div className="app__wrapper app__flex">
+        <div className='app__wrapper app__flex'>
           {/* <div className="app__wrapper"> */}
           <Component />
 
-          <div className="copyright">
-            <p className="p-text">{new Date().getFullYear}</p>
-            <p className="p-text">All rights reserved</p>
+          <div className='copyright'>
+            <p className='p-text'>{new Date().getFullYear}</p>
+            <p className='p-text'>All rights reserved</p>
           </div>
         </div>
         <NavigationDots active={idName} />

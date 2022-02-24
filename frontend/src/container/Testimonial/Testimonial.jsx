@@ -32,37 +32,35 @@ const Testimonial = () => {
     <>
       {testimonials.length && (
         <>
-          <div className="app__testimonial-item app__flex">
+          <div className='app__testimonial-item app__flex'>
             <img
               src={`${baseUrl}${testimonials[currentIndex].attributes.imgUrl.data.attributes.url}`}
               alt={testimonials[0].attributes.name}
             />
-            <div className="app__testimonial-content">
-              <p className="p-text">
+            <div className='app__testimonial-content'>
+              <p className='p-text'>
                 {testimonials[currentIndex].attributes.feedBack}
               </p>
               <div>
-                <h4 className="bold-text">
+                <h4 className='bold-text'>
                   {testimonials[currentIndex].attributes.name}
                 </h4>
-                <h4 className="p-text">
+                <h4 className='p-text'>
                   {testimonials[currentIndex].attributes.company}
                 </h4>
               </div>
             </div>
           </div>
 
-          <div className="app__testimonial-btns app__flex">
+          <div className='app__testimonial-btns app__flex'>
             <div
-              className="app__flex"
-              onClick={() => handleClickLeft(currentIndex)}
-            >
+              className='app__flex'
+              onClick={() => handleClickLeft(currentIndex)}>
               <HiChevronLeft />
             </div>
             <div
-              className="app__flex"
-              onClick={() => handleClickRight(currentIndex)}
-            >
+              className='app__flex'
+              onClick={() => handleClickRight(currentIndex)}>
               <HiChevronRight />
             </div>
           </div>
@@ -89,6 +87,6 @@ const Testimonial = () => {
 
 export default AppWrap(
   MotionWrap(Testimonial, "app__testimonial"),
-  "Testimonial",
+  "testimonial",
   "app__primarybg"
 );
