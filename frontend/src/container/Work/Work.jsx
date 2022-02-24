@@ -9,7 +9,6 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterWork, setFilterWork] = useState([]);
-  console.log("🚀 ~ file: Work.jsx ~ line 12 ~ Work ~ filterWork", filterWork);
 
   const { data: work } = useFetchStrapi(
     "http://localhost:1337/api/works?populate=imgUrl",
@@ -17,7 +16,18 @@ const Work = () => {
   );
 
   const baseUrl = "http://localhost:1337";
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      if (item === "All") return setFilterWork(work);
+      return setFilterWork(
+        work.filter((work) => work.attributes.tags.includes(item))
+      );
+    }, 500);
+  };
   return (
     <div className="app__works">
       <h2 className="head-text">
@@ -25,7 +35,7 @@ const Work = () => {
         section
       </h2>
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "Mobile App", "React Js", "All"].map(
+        {["UI/UX", "Web App", "Next Js", "React Js", "All"].map(
           (item, index) => (
             <div
               key={`work ${item}`}
@@ -65,9 +75,8 @@ const Work = () => {
                 <a
                   href={work.attributes.projectLink}
                   target="_blank"
-                  rel="norefer"
+                  rel="noreferrer nofollow"
                 >
-                  {console.log(work.attributes.projectLink)}
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -79,23 +88,24 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-
-                <a
-                  href={work.attributes.projectLink}
-                  target="_blank"
-                  rel="norefer"
-                >
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                    }}
-                    className="app__flex"
+                {work.attributes.codeLink && (
+                  <a
+                    href={work.attributes.codeLink}
+                    target="_blank"
+                    rel="noreferrer nofollow"
                   >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
+                    <motion.div
+                      whileInView={{ scale: [0, 1] }}
+                      whileHover={{ scale: [1, 0.9] }}
+                      transition={{
+                        duration: 0.25,
+                      }}
+                      className="app__flex"
+                    >
+                      <AiFillGithub />
+                    </motion.div>
+                  </a>
+                )}
               </motion.div>
             </div>
             <div className="app__work-content app__flex">
