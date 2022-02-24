@@ -6,6 +6,7 @@ import "./Footer.scss";
 import "./FooterMediaQuery.scss";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ const Footer = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [submitBtn, setSubmitBtn] = useState(false);
   const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
@@ -25,88 +26,117 @@ const Footer = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-
     const strapiPost = async () => {
-      const contact = {
-        data: {
-          name,
-          email,
-          message,
-        },
-      };
+      if (name && email && message) {
+        const contact = {
+          data: {
+            name,
+            email,
+            message,
+          },
+        };
 
-      const data = await fetch("http://localhost:1337/api/contacts", {
-        method: "POST",
-        body: JSON.stringify(contact),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      if (data.status === 400) return console.log("Email should be unique");
-
+        const data = await fetch("http://localhost:1337/api/contacts", {
+          method: "POST",
+          body: JSON.stringify(contact),
+          headers: { "Content-Type": "application/json" },
+        });
+        setIsFormSubmitted(true);
+      } else {
+        setSubmitBtn(true);
+      }
       setLoading(false);
-      setIsFormSubmitted(true);
     };
     strapiPost();
   };
   return (
     <>
-      <h2 className="head-text">Take a coffe & chat with me</h2>
-      <div className="app__footer-cards">
-        <div className="app__footer-card">
-          <img src={images.email} alt="email" />
-          <a href="mailto:aamir1401a@gmail.com" className="p-text">
+      <h2 className='head-text'>Take a coffe & chat with me</h2>
+      <div className='app__footer-cards'>
+        <div className='app__footer-card'>
+          <img src={images.email} alt='email' />
+          <a href='mailto:aamir1401a@gmail.com' className='p-text'>
             aamir1401a@gmail.com
           </a>
         </div>
 
-        <div className="app__footer-card">
-          <img src={images.mobile} alt="mobile" />
-          <a href="tel:+92-316-s2247794" className="p-text">
+        <div className='app__footer-card'>
+          <img src={images.mobile} alt='mobile' />
+          <a href='tel:+92-316-s2247794' className='p-text'>
             +92-316-2247794
           </a>
         </div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app_flex">
-          <div className="app__flex">
+        <div className='app__footer-form app_flex'>
+          <div className='app__flex'>
             <input
-              className="p-text"
-              type="text"
-              placeholder="Your name"
-              name="name"
+              className='p-text'
+              type='text'
+              placeholder='Your name*'
+              name='name'
               value={name}
               onChange={handleChangeInput}
             />
           </div>
-          <div className="app__flex">
+          {submitBtn && !name ? (
+            <motion.p
+              className='p-text app__footer-error'
+              whileInView={{ opacity: [0, 1], y: [20, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}>
+              This field is required
+            </motion.p>
+          ) : (
+            ""
+          )}
+          <div className='app__flex'>
             <input
-              className="p-text"
-              type="email"
-              placeholder="Your email"
-              name="email"
+              className='p-text'
+              type='email'
+              placeholder='Your email*'
+              name='email'
               value={email}
               onChange={handleChangeInput}
             />
           </div>
-
+          {submitBtn && !email ? (
+            <motion.p
+              className='p-text app__footer-error'
+              whileInView={{ opacity: [0, 1], y: [20, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}>
+              This field is required
+            </motion.p>
+          ) : (
+            ""
+          )}
           <div>
             <textarea
-              className="p-text"
-              placeholder="Your Message"
+              className='p-text'
+              placeholder='Your Message*'
               value={message}
-              name="message"
+              name='message'
               onChange={handleChangeInput}
             />
           </div>
-          <div className="app__footer-btn">
-            <button type="button" className="p-text" onClick={handleSubmit}>
+          {submitBtn && !message ? (
+            <motion.p
+              className='p-text app__footer-error'
+              whileInView={{ opacity: [0, 1], y: [20, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}>
+              This field is required
+            </motion.p>
+          ) : (
+            ""
+          )}
+          <div className='app__footer-btn'>
+            <button type='button' className='p-text' onClick={handleSubmit}>
               {loading ? "Sending" : "Send Message"}
             </button>
           </div>
         </div>
       ) : (
         <div>
-          <h3 className="head-text">Thank you for getting In touch</h3>
+          <h3 className='head-text'>Thank you for getting In touch</h3>
         </div>
       )}
     </>
