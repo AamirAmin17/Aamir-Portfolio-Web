@@ -1,0 +1,119 @@
+[33mcommit 07add61808b7152cb9be1b4cdf8665150a59c7f4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Fri Feb 25 11:31:58 2022 +0500
+
+    changed gitignore
+
+[33mcommit ff518211fb422e86340a17a24a353fd41ef07d2d[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Fri Feb 25 11:29:27 2022 +0500
+
+    updated postgress database instead of default sqllite in strapi backend
+
+[33mcommit 71e5577ba3eeb2a3fc0cf7522797de00537ea070[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Fri Feb 25 11:20:10 2022 +0500
+
+    Completed portfolio website
+
+[33mcommit b450f12e1d1b12980b9005b855ce43e269bddc44[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Thu Feb 24 22:38:36 2022 +0500
+
+    fixed testimonial scrolling issue
+
+[33mcommit ce427831f0b739f05141d7a81cc84b31a2ad1546[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Thu Feb 24 22:24:31 2022 +0500
+
+    fixed footer form validation issue
+
+[33mcommit f00aaa088022d5e121c0d1665b8272f2009a4355[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Thu Feb 24 19:13:32 2022 +0500
+
+    working on validation in form
+
+[33mcommit 2e0c2df32cb9cb98192f0de481d313ac93f31902[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Thu Feb 24 18:28:52 2022 +0500
+
+    almost completed footer and whole app
+
+[33mcommit 2c9e76e097bf448ce09593151e425e9f23b8c49d[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Thu Feb 24 17:06:32 2022 +0500
+
+    completed testimonial section
+
+[33mcommit 140f9116387d80c6e6c953533b691368f057c0f4[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Thu Feb 24 15:00:07 2022 +0500
+
+    Skills and work experience section completed
+
+[33mcommit 6c58e84b4e8af7f83884b75c038e4e89b117e457[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Thu Feb 24 11:59:04 2022 +0500
+
+    completed work section
+
+[33mcommit c3cb3b0963ee629c72542990144fea99b7e2834f[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Wed Feb 23 22:18:41 2022 +0500
+
+    allowed databse in git
+
+[33mcommit 9e203489f9d619f62ab579858dcc3389618e61eb[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Wed Feb 23 22:16:26 2022 +0500
+
+    removed sanity and get the react icons
+
+[33mcommit 67455ae2858cf57f5cc00f3d65ef5a88fc4832fd[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Wed Feb 23 18:07:53 2022 +0500
+
+    working on portfolio (works) session
+
+[33mcommit b864e84ff8c39c699d54bec8b23ee86959978c24[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Wed Feb 23 00:51:31 2022 +0500
+
+    changed the backend from sanity to strapi
+
+[33mcommit e9539ee1a0be48393e8ebbc222e01cd84bfa51a6[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Tue Feb 22 17:31:12 2022 +0500
+
+    working on sanity client connection
+
+[33mcommit f49f31d110c6749c7f627a7327a10f7a85e28632[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Tue Feb 22 13:59:40 2022 +0500
+
+    completed about section
+
+[33mcommit 961a041d9239c9e4d8c4c9e774bf202914ce4ba4[m
+Author: Aamir Muhammad Amin <aamir1401a@gamil.com>
+Date:   Tue Feb 22 13:04:44 2022 +0500
+
+    header section completed
+
+[33mcommit 16745dc5e60a60212e5cf76e03933b85f60f85dc[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Mon Feb 21 21:54:20 2022 +0500
+
+    working on header section
+
+[33mcommit 356146c3259de6121320a24427fb7e3d5182702c[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Mon Feb 21 01:51:10 2022 +0500
+
+    working on navbar section
+
+[33mcommit bbe9d59a1bba90595f60c8eae9caab4e8ada561b[m
+Author: AamirAmin17 <80876153+AamirAmin17@users.noreply.github.com>
+Date:   Sun Feb 20 15:44:12 2022 +0500
+
+    completed initial setup of portfolio web
