@@ -6,7 +6,7 @@ module.exports = ({ env }) => ({
     connection: {
       host: config.host,
       port: config.port,
-      database: config.database,
+      database: config.env.database.DATABASE_URL,
       user: config.user,
       password: config.password,
       ssl: {
